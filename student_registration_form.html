@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration Form</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 30px auto;
+            padding: 20px;
+            color: #333;
+        }
+
+        h2 { margin-bottom: 5px; }
+        p { margin-top: 0; color: #666; font-size: 14px; }
+
+        hr {
+            border: 0;
+            border-top: 2px solid #333;
+            margin-bottom: 20px;
+        }
+
+        .form-group { margin-bottom: 15px; }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 6px;
+        }
+
+        .row {
+            display: flex;
+            gap: 10px;
+        }
+
+        .row > * { flex: 1; }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .radio-container {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .button-container {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .btn-clear {
+            background: white;
+            border: 1px solid black;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .btn-submit {
+            background: #333;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .btn-submit:hover { background: black; }
+    </style>
+</head>
+
+<body>
+
+<h2>Student Registration Form</h2>
+<p>Fill out the form for registration</p>
+<hr>
+
+<form action="#" method="post">
+
+    <fieldset>
+        <legend><b>Personal Details</b></legend>
+
+        <div class="form-group">
+            <label for="fname">Name</label>
+            <div class="row">
+                <input type="text" id="fname" name="firstName" placeholder="First Name" required>
+                <input type="text" name="lastName" placeholder="Last Name" required>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group">
+                <label for="dob">Birth Date</label>
+                <input type="date" id="dob" name="birthDate" required>
+            </div>
+
+            <div class="form-group">
+                <label>Gender</label>
+                <div class="radio-container">
+                    <label><input type="radio" name="gender" value="male" required> Male</label>
+                    <label><input type="radio" name="gender" value="female"> Female</label>
+                </div>
+            </div>
+        </div>
+
+    </fieldset>
+
+    <fieldset>
+        <legend><b>Contact Details</b></legend>
+
+        <div class="form-group">
+            <label>Address</label>
+            <input type="text" placeholder="Address line 1" name="addr1" required>
+            <input type="text" placeholder="Address line 2" name="addr2">
+        </div>
+
+        <div class="row">
+            <input type="text" placeholder="City" name="city" required>
+            <input type="text" placeholder="State" name="state" required>
+        </div>
+
+        <div class="row">
+            <input type="text" placeholder="ZIP Code" name="zip" required>
+            <select name="country">
+                <option>India</option>
+                <option>USA</option>
+                <option>UK</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Email</label>
+            <input type="email" name="email" placeholder="example@email.com" required>
+        </div>
+
+        <div class="row">
+            <input type="tel" name="phone" placeholder="Phone Number"
+                   pattern="[0-9]{10}" required>
+            <input type="tel" name="workPhone" placeholder="Work Phone">
+        </div>
+
+    </fieldset>
+
+    <fieldset>
+        <legend><b>Other Details</b></legend>
+
+        <div class="form-group">
+            <label>Company</label>
+            <input type="text" name="company">
+        </div>
+
+        <div class="form-group">
+            <label>Courses</label>
+            <select name="courses" required>
+                <option value="">Select Course</option>
+                <option value="web">Web Development</option>
+                <option value="uiux">UI/UX Design</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Comments</label>
+            <textarea rows="4" name="comments"></textarea>
+        </div>
+
+    </fieldset>
+
+    <div class="button-container">
+        <button type="reset" class="btn-clear">Clear</button>
+        <button type="submit" class="btn-submit">Submit</button>
+    </div>
+
+</form>
+
+</body>
+</html>
